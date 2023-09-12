@@ -1,6 +1,7 @@
 package praktikum.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import praktikum.EnvConfig;
@@ -12,25 +13,25 @@ public class MainPage {
     final WebDriver driver;
 
     //Лого Самоката
-    public static final By logoScooter = By.xpath(".//img[@alt='Scooter']");
+    private static final By logoScooter = By.xpath(".//img[@alt='Scooter']");
     //Лого Яндекса
-    public static final By logoYandex = By.xpath(".//img[@alt='Yandex']");
+    private static final By logoYandex = By.xpath(".//img[@alt='Yandex']");
     //Кнопка Статус заказа
-    public static final By goButton = By.cssSelector("[class*=Header_Button_]");
+    private static final By goButton = By.cssSelector("[class*=Header_Button_]");
     //Поле для ввода номера заказа
-    public static final By orderInput = By.className("Input_Input__1iN_Z");
+    private static final By orderInput = By.className("Input_Input__1iN_Z");
     //Кнопка Го!
-    public static final By statusButton = By.className("Header_Link__1TAG7");
+    private static final By statusButton = By.className("Header_Link__1TAG7");
     //Кнопки заказать на домашней странице страницы
-    public static final By orderButtons = By.xpath(".//button[text()='Заказать']");
+    private static final By orderButtons = By.xpath(".//button[text()='Заказать']");
     //Куки - "да все привыкли" кнопка
-    public static final By cookieButton = By.id("rcc-confirm-button");
+    private static final By cookieButton = By.id("rcc-confirm-button");
     //Надпись "Вопросы о важном"
-    public final static By questionsSection = By.xpath(".//div[text()='Вопросы о важном']");
+    private final static By questionsSection = By.xpath(".//div[text()='Вопросы о важном']");
     //Лист вопросов
-    public final static By questionsList = By.className("accordion__item");
+    private final static By questionsList = By.className("accordion__item");
     //Лист ответов
-    public final static By answerList = By.tagName("p");
+    private final static By answerList = By.tagName("p");
 
     //Конструктор
     public MainPage(WebDriver driver) {
@@ -72,6 +73,13 @@ public class MainPage {
     //Нажать на принять куки
     public MainPage clickCookieAgreement() {
         driver.findElement(cookieButton).click();
+        return this;
+    }
+
+    //Найти секцию вопросов и ответов на странице
+    public MainPage findQuestionsAndAnswers() {
+        WebElement element = driver.findElement(questionsSection);
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
         return this;
     }
 

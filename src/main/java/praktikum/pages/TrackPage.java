@@ -12,7 +12,7 @@ public class TrackPage {
 
     final WebDriver driver;
     //Картинка-ошибка, что заказ по номеру не найден
-    public static final By notFound = By.cssSelector("[alt='Not found']");
+    private static final By notFound = By.cssSelector("[alt='Not found']");
 
     //Конструктор
     public TrackPage(WebDriver driver) {

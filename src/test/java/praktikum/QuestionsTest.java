@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import praktikum.pages.MainPage;
 
 import static org.junit.Assert.assertEquals;
-import static praktikum.pages.MainPage.questionsSection;
 
 @RunWith(Parameterized.class)
 public class QuestionsTest {
@@ -44,10 +43,7 @@ public class QuestionsTest {
 
         MainPage mainPage = new MainPage(driverRule.getDriver());
 
-        mainPage.open();
-
-        WebElement element = driverRule.getDriver().findElement(questionsSection);
-        ((JavascriptExecutor)driverRule.getDriver()).executeScript("arguments[0].scrollIntoView();", element);
+        mainPage.open().findQuestionsAndAnswers();
 
         String actual = mainPage.clickCookieAgreement().clickOnQuestionAndGetAnswers(questionNumber);
 

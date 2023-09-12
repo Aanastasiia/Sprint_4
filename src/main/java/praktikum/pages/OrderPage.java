@@ -11,19 +11,19 @@ public class OrderPage {
     final WebDriver driver;
 
     //Поле Имя
-    public static final By fieldName = By.xpath(".//input[@placeholder='* Имя']");
+    private static final By fieldName = By.xpath(".//input[@placeholder='* Имя']");
     //Поле Фамилия
-    public static final By fieldLastName = By.xpath(".//input[@placeholder='* Фамилия']");
+    private static final By fieldLastName = By.xpath(".//input[@placeholder='* Фамилия']");
     //Поле Адрес
-    public static final By fieldAddress = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
+    private static final By fieldAddress = By.xpath(".//input[@placeholder='* Адрес: куда привезти заказ']");
     //Поле Станция Метро
-    public static final By fieldChooseSubwayStation = By.xpath(".//input[@placeholder='* Станция метро']");
+    private static final By fieldChooseSubwayStation = By.xpath(".//input[@placeholder='* Станция метро']");
     //Список станций метро
-    public static final By subwayStations = By.className("select-search__row");
+    private static final By subwayStations = By.className("select-search__row");
     //Поле Телефон
-    public static final By fieldPhoneNumber = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
+    private static final By fieldPhoneNumber = By.xpath(".//input[@placeholder='* Телефон: на него позвонит курьер']");
     //Кнопка Далее
-    public static final By buttonNext = By.xpath(".//button[contains(@class, 'Button_Middle__1CSJM')]");
+    private static final By buttonNext = By.xpath(".//button[contains(@class, 'Button_Middle__1CSJM')]");
 
     //Конструктор
     public OrderPage(WebDriver driver) {

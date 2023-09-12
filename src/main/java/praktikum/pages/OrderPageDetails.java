@@ -10,21 +10,21 @@ public class OrderPageDetails {
     final WebDriver driver;
 
     //Поле с датой
-    public final static By fieldDate = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
+    private final static By fieldDate = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
     //Поле с арендой
-    public final static By fieldRent = By.className("Dropdown-arrow");
+    private final static By fieldRent = By.className("Dropdown-arrow");
     //Список сроков аренды
-    public final static By rentOptions = By.className("Dropdown-option");
+    private final static By rentOptions = By.className("Dropdown-option");
     //Цвет самоката - список
-    public final static By colorOptions = By.className("Checkbox_Input__14A2w");
+    private final static By colorOptions = By.className("Checkbox_Input__14A2w");
     //Комментарий для курьера
-    public final static By fieldComment = By.xpath(".//input[@placeholder='Комментарий для курьера']");
+    private final static By fieldComment = By.xpath(".//input[@placeholder='Комментарий для курьера']");
     //Кнопка заказать
-    public final static By finalOrderButton = By.xpath(".//div[@class='Order_Buttons__1xGrp']/button[2]");
+    private final static By finalOrderButton = By.xpath(".//div[@class='Order_Buttons__1xGrp']/button[2]");
     //Подтверждение заказа - кнопка "Да"
-    public final static By buttonConfirm = By.xpath(".//div[@class='Order_Modal__YZ-d3']/div[@class='Order_Buttons__1xGrp']/button[2]");
+    private final static By buttonConfirm = By.xpath(".//div[@class='Order_Modal__YZ-d3']/div[@class='Order_Buttons__1xGrp']/button[2]");
     //Окно "Заказ оформлен"
-    public final static By confirmOrderWindow = By.xpath(".//div[text()='Заказ оформлен']");
+    private final static By confirmOrderWindow = By.xpath(".//div[text()='Заказ оформлен']");
 
     //Конструктор
     public OrderPageDetails(WebDriver driver) {
